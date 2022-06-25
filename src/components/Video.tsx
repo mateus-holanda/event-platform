@@ -1,3 +1,5 @@
+/* @vite-ignore */
+import LoadingSpin from "react-loading-spin";
 import { DefaultUi, Player, Youtube } from "@vime/react";
 import { CaretRight, DiscordLogo, FileArrowDown, Lightning } from "phosphor-react";
 
@@ -17,8 +19,8 @@ export function Video({ lessonSlug }: VideoProps) {
 
   if (!data || !data.lesson) {
     return (
-      <div className="flex-1">
-        Loading...
+      <div className="flex mx-auto mt-[15vh]">
+        <LoadingSpin size="80px" />
       </div>
     )
   }

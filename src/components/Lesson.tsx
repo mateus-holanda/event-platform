@@ -10,14 +10,14 @@ interface LessonProps {
 }
 
 export function Lesson({ title, slug, availableAt, type }: LessonProps) {
-  const { currentSlug } = useParams<{ currentSlug: string }>();
+  const { slug: currentSlug } = useParams<{ slug: string }>();
   const isActiveLesson = currentSlug === slug;
 
   const isLessonAvailable = isPast(availableAt);
   const availableDateFormatted = format(availableAt, "EEEE' • 'MMMM' 'd' • 'k'h'mm")
 
   return (
-    <Link to={`/event/lesson/${slug}`} className="group">
+    <Link to={`/event/lesson/${slug}`} className={`${!isLessonAvailable ? "pointer-events-none" : ""} group`}>
       <span className="text-gray-300">
         {availableDateFormatted}
       </span>
