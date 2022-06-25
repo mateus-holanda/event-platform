@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { Header } from "../components/Header";
 import { Sidebar } from "../components/Sidebar";
 import { Video } from "../components/Video";
+import { Footer } from "../components/Footer";
 
 export function Event() {
   const { slug } = useParams<{ slug: string }>()
@@ -13,6 +14,7 @@ export function Event() {
         { slug ? <Video lessonSlug={slug} /> : <div className="flex-1" />}
         <Sidebar />
       </main>
+      <Footer />
     </div>
   )
 }

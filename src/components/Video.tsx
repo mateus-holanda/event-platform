@@ -1,10 +1,10 @@
 /* @vite-ignore */
 import LoadingSpin from "react-loading-spin";
 import { DefaultUi, Player, Youtube } from "@vime/react";
+import { useGetLessonBySlugQuery } from "../graphql/generated";
 import { CaretRight, DiscordLogo, FileArrowDown, Lightning } from "phosphor-react";
 
 import "@vime/core/themes/default.css";
-import { useGetLessonBySlugQuery } from "../graphql/generated";
 
 interface VideoProps {
   lessonSlug: string;
@@ -104,7 +104,7 @@ export function Video({ lessonSlug }: VideoProps) {
               <CaretRight size={24} />
             </div>
           </a>
-        </div>
+        </div> 
       </div>
     </div>
   )
