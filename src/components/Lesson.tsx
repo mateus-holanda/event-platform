@@ -17,7 +17,10 @@ export function Lesson({ title, slug, availableAt, type }: LessonProps) {
   const availableDateFormatted = format(availableAt, "EEEE' • 'MMMM' 'd' • 'k'h'mm")
 
   return (
-    <Link to={`/event/lesson/${slug}`} className={`${!isLessonAvailable ? "pointer-events-none" : ""} group`}>
+    <Link
+      to={`/event/lesson/${slug}`}
+      className={`${!isLessonAvailable ? "pointer-events-none cursor-not-allowed" : ""} group`}
+    >
       <span className="text-gray-300">
         {availableDateFormatted}
       </span>
